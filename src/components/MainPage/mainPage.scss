@@ -8,7 +8,6 @@ $add_btn_width: 40px;
   width: fit-content;
   height: 100vh;
   padding: 50px;
-  // background-color: rgba(199, 199, 199, 0.611);
 
   .MainPageSection_addList {
     display: flex;
@@ -16,7 +15,7 @@ $add_btn_width: 40px;
     justify-content: center;
     align-items: center;
     width: $list_width;
-    height: 80px;
+    height: 73px;
     padding: 15px;
     background-color: $g_4;
     border-radius: $borderRadius;

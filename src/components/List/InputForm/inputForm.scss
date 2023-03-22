@@ -11,6 +11,12 @@ $element_width_button: 120px;
   flex-direction: column;
   align-items: end;
 
+    .InputFormSection_title{
+        width: 100%;
+        text-align: center;
+        font-weight: 600;
+    }
+
   .InputFormSection_input {
     align-self: center;
     padding: 25px 0;

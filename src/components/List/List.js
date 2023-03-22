@@ -1,6 +1,6 @@
 import { IonIcon } from '@ionic/react'
+import { trashOutline, addOutline } from 'ionicons/icons'
 import axios from 'axios'
-import { addOutline } from 'ionicons/icons'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {
@@ -39,6 +39,8 @@ function List({ data, setIsPopup }) {
   const domain = state.start.domain
   const { currentBoard, currentCard } = state.dragable
   const { _id, title, cards } = data
+  const [hoverTrash, setHoverTrash] = useState(false)
+  const activeWordTrash = 'activeWordTrash'
   // ==================================
 
   const updateLists = (lists) => {
@@ -56,6 +58,30 @@ function List({ data, setIsPopup }) {
       })
       .catch((e) => {
         console.log(`error in update lists: ${e.message}`)
+      })
+  }
+
+  const deleteList = () => {
+    const url = `${domain}/deleteList`
+    const submitData = { listId: _id }
+
+    const deleteCardFromList = () => {
+       return lists.data.filter((el, index)=>el._id !== _id)
+    }
+
+    axios
+      .post(url, submitData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      .then((res) => {
+        console.log('success delete list')
+        const def = deleteCardFromList()
+        changeDataLists(def)
+      })
+      .catch((e) => {
+        console.log(`error in delete list: ${e.message}`)
       })
   }
 
@@ -114,6 +140,9 @@ function List({ data, setIsPopup }) {
     changeAddCardListId(_id)
     setIsPopup(true)
   }
+  const listDeleteOnClick = () => {
+    deleteList()
+  }
 
   // useEffect(() => {
   //   console.log(isPopup)
@@ -126,7 +155,27 @@ function List({ data, setIsPopup }) {
         onDragOver={(e) => dragOverHandler(e)}
         onDrop={(e) => dropCardHandler(e, data)}
       >
-        <div className="ListSection_title">{title}</div>
+        <div className="ListSection_top">
+          <div className="ListSection_left"></div>
+          <div className="ListSection_title">{title}</div>
+          <div
+            className="ListSection_right"
+            onClick={listDeleteOnClick}
+            onMouseEnter={() => setHoverTrash(true)}
+            onMouseLeave={() => setHoverTrash(false)}
+          >
+            {cards.length === 0 ? (
+              <>
+                <IonIcon
+                  className={`MainPageSection_add_icon ${
+                    hoverTrash ? activeWordTrash : ''
+                  }`}
+                  icon={trashOutline}
+                />
+              </>
+            ) : null}
+          </div>
+        </div>
 
         <div className="ListSection_cards">
           {cards.map((el, index) => (
@@ -139,7 +188,7 @@ function List({ data, setIsPopup }) {
               onDrop={(e) => dropHandler(e, data, el)}
               key={`LSC_${index}`}
             >
-              <Card data={el} />
+              <Card listId={_id} data={el} />
             </div>
           ))}
         </div>

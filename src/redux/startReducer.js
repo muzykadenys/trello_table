@@ -1,6 +1,7 @@
 
 
 const initState = {
+  // domain: 'https://automatic-shell-centaur.glitch.me',
   domain: 'http://localhost:5000',
 }
 

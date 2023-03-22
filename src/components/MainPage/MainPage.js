@@ -155,7 +155,10 @@ function MainPage() {
       {isPopup && !isPopupAddList ? (
         <div>
           <Popup setIsVisible={setIsPopup}>
-            <InputForm getInputValue={changeAddCardCardContent} />
+            <InputForm
+              formTitle={'Card text'}
+              getInputValue={changeAddCardCardContent}
+            />
           </Popup>
         </div>
       ) : null}
@@ -163,7 +166,10 @@ function MainPage() {
       {isPopupAddList && !isPopup ? (
         <div>
           <Popup setIsVisible={setIsPopupAddList}>
-            <InputForm getInputValue={changeAddListTitle} />
+            <InputForm
+              formTitle={'List title'}
+              getInputValue={changeAddListTitle}
+            />
           </Popup>
         </div>
       ) : null}

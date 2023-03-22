@@ -3,6 +3,7 @@
 $add_btn_width: 40px;
 
 .ListSection {
+    
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,9 +13,22 @@ $add_btn_width: 40px;
   background-color: $g_4;
   border-radius: $borderRadius;
 
-  .ListSection_title {
-    font-weight: 700;
-    color: $g_1_2;
+  .ListSection_top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .ListSection_title {
+      font-weight: 700;
+      color: $g_1_2;
+    }
+
+    .ListSection_right {
+        cursor: pointer;
+      .activeWordTrash {
+        color: red;
+      }
+    }
   }
 
   .ListSection_add {
