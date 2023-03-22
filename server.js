@@ -58,6 +58,22 @@ app.post('/updateLists', async (req, res) => {
     res.status(400).json({ message: e.message })
   }
 })
+app.post('/deleteCard', async (req, res) => {
+  try {
+    const card = await controller.deleteCard(req.body.cardId, req.body.listId)
+    res.status(201).json({message: "success"})
+  } catch (e) {
+    res.status(400).json({ message: e.message })
+  }
+})
+app.post('/deleteList', async (req, res) => {
+  try {
+    const list = await controller.deleteList( req.body.listId)
+    res.status(201).json({message: "success"})
+  } catch (e) {
+    res.status(400).json({ message: e.message })
+  }
+})
 
 app.listen(5000, () => {
   console.log('Server running on port 5000')
