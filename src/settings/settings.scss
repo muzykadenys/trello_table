@@ -1,0 +1,112 @@
+@font-face {
+  font-family: Fixel;
+  src: url('../../public/font/MacPawFixelDisplay-Thin.ttf');
+  font-style: normal;
+  font-weight: 100;
+}
+@font-face {
+  font-family: Fixel;
+  src: url('../../public/font/MacPawFixelDisplay-ExtraLight.ttf');
+  font-style: normal;
+  font-weight: 200;
+}
+@font-face {
+  font-family: Fixel;
+  src: url('../../public/font/MacPawFixelDisplay-Light.ttf');
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: Fixel;
+  src: url('../../public/font/MacPawFixelDisplay-Regular.ttf');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: Fixel;
+  src: url('../../public/font/MacPawFixelDisplay-Medium.ttf');
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: Fixel;
+  src: url('../../public/font/MacPawFixelDisplay-SemiBold.ttf');
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: Fixel;
+  src: url('../../public/font/MacPawFixelDisplay-Bold.ttf');
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: Fixel;
+  src: url('../../public/font/MacPawFixelDisplay-ExtraBold.ttf');
+  font-style: normal;
+  font-weight: 800;
+}
+@font-face {
+  font-family: Fixel;
+  src: url('../../public/font/MacPawFixelDisplay-Black.ttf');
+  font-style: normal;
+  font-weight: 900;
+}
+
+// ========================================================
+
+$g_0: white;
+$g_1: rgb(0, 0, 0);
+$g_1_2: #262626;
+$g_1_3: #3f3f3f;
+$g_2: #bababa;
+$g_2_1: #d3d3d3;
+$g_3: rgb(232, 232, 232);
+$g_4: rgb(242, 242, 242);
+$g_5: #8b8d8c;
+
+$b_1: #0294a9;
+$b_2: #12afc2;
+$b_3: #4acdf9;
+$b_4: #dbfbff;
+
+$r_0: #ff7777;
+$r_1: #fff8fa;
+
+$gr_0: #caff89;
+$gr_1: #f5ffe9;
+
+$header_height: 60px;
+$header_padding: 4%;
+$header_padding_mobile: 8%;
+
+$header_height_mobile: 70vh;
+
+$ADAPTIVE_M_-1: 1650px;
+$ADAPTIVE_M_1: 1410px;
+$ADAPTIVE_M_2: 1100px;
+$ADAPTIVE_M_3: 800px;
+$ADAPTIVE_S_1: 781px;
+$ADAPTIVE_S_2: 450px;
+
+$borderRadius: 7px;
+$list_width: 230px;
+
+// ================================================================
+
+#root,
+body,
+html {
+  font-family: Fixel;
+  margin: 0px;
+  padding: 0px;
+  scroll-behavior: smooth;
+  ::selection {
+    // color:  $b_1;
+    background-color: $b_3;
+  }
+}
+
+.App {
+  height: 100vh;
+}

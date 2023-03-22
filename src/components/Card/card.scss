@@ -1,0 +1,26 @@
+@import "../List/list.scss";
+
+.CardSection{
+    cursor: pointer;
+    width: $list_width;
+    margin-top: 10px;
+    background-color: $g_3;
+    // padding: 10px;
+    border-radius: 6px;
+
+    .CardSection_lastChange{
+        border-top-left-radius: $borderRadius;
+        border-top-right-radius: $borderRadius;
+        // background-color: $g_4;
+        color: $g_1_3;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 4px 10px;
+    }
+
+    .CardSection_content{
+        font-size: 15px;
+        font-weight: 500;
+        padding: 10px 10px;
+    }
+}

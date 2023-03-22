@@ -1,0 +1,45 @@
+@import '../../settings/settings.scss';
+
+$padding_content: 15px;
+
+.Popup_Section {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 110;
+  background-color: rgba(210, 210, 210, 0.489);
+
+  .Popup_Section_Content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    background-color: $g_0;
+    border-radius: 10px;
+
+    .Popup_Section_Content_Close {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      font-size: 28px;
+      margin-top: $padding_content;
+      margin-right: $padding_content;
+      padding: 5px;
+      border-radius: 100px;
+      cursor: pointer;
+
+      color: $g_2;
+      background-color: $g_4;
+
+      &:hover {
+        background-color: $g_3;
+      }
+    }
+  }
+}

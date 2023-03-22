@@ -1,0 +1,53 @@
+@import '../../../settings/settings.scss';
+
+$padding_content: 20px;
+
+$element_width_input: 60vw;
+
+$element_width_button: 120px;
+.InputFormSection {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+  .InputFormSection_input {
+    align-self: center;
+    padding: 25px 0;
+    margin-top: 15px;
+    border: 0;
+    border-radius: 100px;
+    background-color: $g_4;
+    font-weight: 600;
+    color: $g_1_2;
+    
+    font-size: 18px;
+    text-align: center;
+
+    width: $element_width_input;
+
+    &::placeholder {
+      color: $g_5;
+      text-align: center;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .InputFormSection_button {
+    width: $element_width_button;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    background-color: $g_1;
+    color: $g_0;
+    font-weight: 500;
+    border-radius: 100px;
+    padding: 0px 20px;
+    margin-top: 20px;
+  }
+}

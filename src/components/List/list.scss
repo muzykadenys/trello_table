@@ -1,0 +1,31 @@
+@import '../../settings/settings.scss';
+
+$add_btn_width: 40px;
+
+.ListSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: $list_width;
+  height: fit-content;
+  padding: 15px;
+  background-color: $g_4;
+  border-radius: $borderRadius;
+
+  .ListSection_title {
+    font-weight: 700;
+    color: $g_1_2;
+  }
+
+  .ListSection_add {
+    cursor: pointer;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $g_3;
+    width: $add_btn_width;
+    height: $add_btn_width;
+    border-radius: 100px;
+  }
+}
