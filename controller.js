@@ -21,7 +21,9 @@ async function addCard(listId, cardContent) {
 
     await list.save()
     console.log(`card is created`)
+    return card
   }
+  return {}
 }
 async function addList(listTitle) {
   var list
@@ -29,7 +31,10 @@ async function addList(listTitle) {
     list = await new List({ title: listTitle })
     await list.save()
     console.log(`list <${listTitle}> is created`)
+
+    return list
   }
+  return {}
 }
 
 async function deleteList(listId) {
@@ -53,12 +58,23 @@ async function updateCardPosition(cardId, prev_listId, new_listId) {
   await deleteCard(cardId, prev_listId)
   new_list.cards = await [...new_list.cards, card]
 
-  //   console.log(card)
-
   new_list.save()
   console.log(
     `card moved from list <${prev_list.title}> to <${new_list.title}>`,
   )
+}
+
+async function updateAllLists(lists) {
+  const current_lists = await findList()
+
+  const new_list = await current_lists.map((el, index) => {
+    el.cards = lists[index].cards
+    el.save()
+  })
+
+  console.log('lists updated')
+
+  return new_list
 }
 
 module.exports = {
@@ -72,4 +88,5 @@ module.exports = {
   deleteCard: deleteCard,
 
   updateCardPosition: updateCardPosition,
+  updateAllLists: updateAllLists,
 }
